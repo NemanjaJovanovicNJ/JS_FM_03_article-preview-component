@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+:root {
+  /* FONTS*/
+
+  --ff-main: "Manrope", sans-serif;
+
+  /* COLORS */
+
+  /* Primary*/
+  --clr-primary-dark-grayish-blue: hsl(217, 19%, 35%);
+
+  /* Secondary */
+
+  --clr-desaturated-dark-blue: hsl(214, 17%, 51%);
+  --clr-grayish-blue: hsl(212, 23%, 69%);
+  --clr-light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+/* Initialization */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: var(--clr-light-grayish-blue);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-main);
+  position: relative;
+}
+
+/* Article Preview Component */
+
+.container {
+  background-color: #fff;
+  max-width: 73rem;
+  max-height: 28rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5rem;
+  box-shadow: 0rem 0rem 1rem 0.1rem rgb(233, 231, 231);
+}
+.overlay {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.img-container {
+  border-bottom-left-radius: 1.5rem;
+  border-top-left-radius: 1.5rem;
+  min-width: 28rem;
+  height: 28rem;
+  background: url(images/drawers.jpg) no-repeat;
+  background-size: 125% 100%;
+  background-position: 0% 30%;
+}
+
+.content {
+  padding: 4rem 4rem 3rem 4rem;
+  height: 100%;
+}
+
+.heading-content {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--clr-primary-dark-grayish-blue);
+  margin-bottom: 1.5rem;
+}
+.text-content {
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--clr-desaturated-dark-blue);
+  margin-bottom: 1.5rem;
+}
+
+.avatar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+.avatar-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--clr-primary-dark-grayish-blue);
+}
+
+.avatar-date {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--clr-desaturated-dark-blue);
+}
+.avatar-img {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+/* Share BUTTON and Share pop-up */
+
+.share-button {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  right: 0;
+  background: url(images/icon-share.svg) no-repeat;
+  background-color: var(--clr-light-grayish-blue);
+  background-position: 50% 50%;
+  transition: box-shadow 1.5s ease;
+}
+.share-button:hover {
+  box-shadow: 0rem 0rem 0.5rem 0.1rem var(--clr-grayish-blue);
+  cursor: pointer;
+}
+
+.share {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(43%, -110%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.share-box {
+  background-color: var(--clr-primary-dark-grayish-blue);
+  width: 24.5rem;
+  height: 5.5rem;
+  border-radius: 1rem;
+  box-shadow: 0rem 0rem 1rem 0.1rem rgb(193, 192, 192);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+}
+.share-triangle {
+  width: 0;
+  height: 0;
+  border-left: 1.5rem solid transparent;
+  border-right: 1.5rem solid transparent;
+
+  border-top: 1.5rem solid var(--clr-primary-dark-grayish-blue);
+}
+
+.share-text {
+  color: #fff;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  color: var(--clr-grayish-blue);
+}
+a:link,
+a:active {
+  display: block;
+}
+.hidden {
+  display: none;
+}

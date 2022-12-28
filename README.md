@@ -14,7 +14,7 @@
 
 * [FM - Article Preview Component](https://www.frontendmentor.io/challenges/article-preview-component-dYBN_pYFT)
 
-* [Vercel: My Solution]()
+* [Vercel: My Solution](https://js-fm-03-article-preview-component.vercel.app/)
 
 --- 
 ### Mobile version <a name="mobile"></a>
