@@ -47,8 +47,7 @@ body {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+
   border-radius: 1.5rem;
   box-shadow: 0rem 0rem 1rem 0.1rem rgb(233, 231, 231);
 }
@@ -58,6 +57,7 @@ body {
   height: 100%;
   width: 100%;
   position: absolute;
+  z-index: 997;
 }
 .img-container {
   border-bottom-left-radius: 1.5rem;
@@ -69,7 +69,10 @@ body {
   background-position: 0% 30%;
 }
 
+/* MAIN CONTENT */
+
 .content {
+  position: relative;
   padding: 4rem 4rem 3rem 4rem;
   height: 100%;
 }
@@ -90,10 +93,11 @@ body {
 }
 
 .avatar-container {
-  position: relative;
+  /* position: relative; */
   display: flex;
   align-items: center;
   gap: 1.3rem;
+  width: 100%;
 }
 
 .avatar-info {
@@ -127,11 +131,16 @@ span {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  right: 0;
+  right: 3rem;
+  bottom: 1rem;
+  transform: translate(-50%, -50%);
+
   background: url(images/icon-share.svg) no-repeat;
   background-color: var(--clr-light-grayish-blue);
   background-position: 50% 50%;
   transition: box-shadow 1.5s ease;
+  margin-left: auto;
+  z-index: 999;
 }
 .share-button:hover {
   box-shadow: 0rem 0rem 0.5rem 0.1rem var(--clr-grayish-blue);
@@ -141,11 +150,12 @@ span {
 .share {
   position: absolute;
   right: 0;
-  top: 0;
-  transform: translate(43%, -110%);
+  bottom: 0;
+  transform: translate(25%, -100%);
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 998;
 }
 
 .share-box {
@@ -180,4 +190,88 @@ a:active {
 }
 .hidden {
   display: none;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 46em) {
+  .container {
+    max-width: 32.5rem;
+    max-height: 51rem;
+    flex-direction: column;
+  }
+  .img-container {
+    border-top-right-radius: 1.5rem;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 0rem;
+    min-width: unset;
+    min-height: 20rem;
+    background-size: 100% 130%;
+    background-position: 100% 30%;
+  }
+  .content {
+    padding: 4rem 3rem 0rem 3rem;
+    height: 100%;
+  }
+  .heading-content {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+  .text-content {
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  .avatar-container {
+    position: absolute;
+    height: 6rem;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+  .share {
+    right: 0;
+    bottom: 0;
+    transform: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .share-button {
+    z-index: 999;
+    bottom: 0;
+  }
+  .share-box {
+    width: 32.5rem;
+    height: 6rem;
+    border-radius: 0;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+
+    align-items: center;
+    justify-content: start;
+    padding-left: 3rem;
+
+    gap: 2rem;
+    /* transition: all 0.3s ease; */
+    animation: sharePopUp 10s ease;
+    animation-direction: alternate;
+  }
+  .share-triangle {
+    display: none;
+  }
+  .hidden {
+    display: none;
+  }
+  @keyframes sharePopUp {
+    from {
+      max-height: 0;
+    }
+
+    to {
+      max-height: 300rem;
+    }
+  }
 }

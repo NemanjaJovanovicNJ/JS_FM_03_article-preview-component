@@ -4,28 +4,12 @@ const shareButton = document.querySelector(".share-button");
 const shareEl = document.querySelector(".share");
 const overlayEL = document.querySelector(".overlay");
 
-const hide = function () {
-  shareEl.classList.add("hidden");
-};
-
-const display = function () {
-  shareEl.classList.remove("hidden");
-};
-
-let active = false;
-shareButton.addEventListener("click", function () {
-  if (active == false) {
-    display();
-    active = true;
-  } else {
-    hide();
-    active = false;
-  }
+shareButton.addEventListener("click", () => {
+  shareEl.classList.toggle("hidden");
 });
 
-overlayEL.addEventListener("click", function () {
-  if (active != false) {
+overlayEL.addEventListener("click", () => {
+  if (!shareEl.classList.contains("hidden")) {
     shareEl.classList.add("hidden");
-    active = false;
   }
 });
