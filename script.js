@@ -13,3 +13,8 @@ overlayEL.addEventListener("click", () => {
     shareEl.classList.add("hidden");
   }
 });
+
+window.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && !shareEl.classList.contains("hidden"))
+    shareEl.classList.add("hidden");
+});
